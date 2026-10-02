@@ -1,0 +1,2 @@
+import { Button } from './ui/button'
+export default function QueryState({query}) { if (query.isError) return <div role="alert" className="notice error">Không thể tải dữ liệu: {query.error.message} <Button type="button" onClick={() => query.refetch()}>Thử lại</Button></div>; if (query.isPending) return <p role="status">{query.fetchStatus === 'paused' ? 'Đang offline. Kết nối mạng để tiếp tục tải.' : 'Đang tải dữ liệu...'}</p>; return null }
